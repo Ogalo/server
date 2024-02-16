@@ -70,8 +70,7 @@ const getPropertyDetail = async (req, res) => {
 };
 
 const createProperty = async (req, res) => {
-    try {
-        const {
+            const {
             title,
             description,
             propertyType,
@@ -106,10 +105,6 @@ const createProperty = async (req, res) => {
         await session.commitTransaction();
 
         res.status(200).json({ message: "Property created successfully" });
-
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
 };
 
 const updateProperty = async (req, res) => {
